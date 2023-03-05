@@ -1,0 +1,7 @@
+---
+# hosts
+
+linuxhosts:
+  hosts:
+    debian11:
+      ansible_host: 10.0.0.64
