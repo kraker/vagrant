@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
   # SUSE boxes
   config.vm.define "opensuse15_5" do |opensuse15_5|
     opensuse15_5.vm.box = "opensuse/Leap-15.5.x86_64"
-    opensuse15_5.vm.hostname = "opensuse15_5"
+    opensuse15_5.vm.hostname = "opensuse15.5"
     opensuse15_5.vm.network "private_network", ip: "10.0.0.21"
   end
 
