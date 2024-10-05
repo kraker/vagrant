@@ -1,0 +1,8 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.registration.username = ENV['SUB_USERNAME']
+  config.registration.password = ENV['SUB_PASSWORD']
+  config.vm.box = "generic/rhel8"
+end
