@@ -11,21 +11,21 @@ Vagrant.configure("2") do |config|
   config.vm.define "rhel7" do |rhel7|
     rhel7.vm.box = "generic/rhel7"
     rhel7.vm.hostname = "rhel7"
-    rhel7.vm.provision :ansible do |ansible|
+    rhel7.vm.provision "ansible" do |ansible|
       ansible.playbook = "playbook.yml"
     end
   end
   config.vm.define "rhel8" do |rhel8|
     rhel8.vm.box = "generic/rhel8"
     rhel8.vm.hostname = "rhel8"
-    rhel8.vm.provision :ansible do |ansible|
+    rhel8.vm.provision "ansible" do |ansible|
       ansible.playbook = "playbook.yml"
     end
   end
   config.vm.define "rhel9" do |rhel9|
     rhel9.vm.box = "generic/rhel9"
     rhel9.vm.hostname = "rhel9"
-    rhel9.vm.provision :ansible do |ansible|
+    rhel9.vm.provision "ansible" do |ansible|
       ansible.playbook = "playbook.yml"
     end
   end
