@@ -5,29 +5,24 @@ Vagrant.configure("2") do |config|
   # vagrant-registration plugin settings
   config.registration.username = ENV['SUB_USERNAME']
   config.registration.password = ENV['SUB_PASSWORD']
-  config.ssh.key_type = "ecdsa256" # ed25519 won't work for STIG
-  # config.registration.unregister_on_halt = false
+  config.ssh.key_type = "ecdsa256"
+  config.registration.unregister_on_halt = false
 
-  config.vm.define "rhel7" do |rhel7|
-    rhel7.vm.box = "generic/rhel7"
-    rhel7.vm.hostname = "rhel7"
-    rhel7.vm.provision "ansible" do |ansible|
-      ansible.playbook = "playbook.yml"
-    end
-  end
-  config.vm.define "rhel8" do |rhel8|
-    rhel8.vm.box = "generic/rhel8"
-    rhel8.vm.hostname = "rhel8"
-    rhel8.vm.provision "ansible" do |ansible|
-      ansible.playbook = "playbook.yml"
-    end
-  end
-  config.vm.define "rhel9" do |rhel9|
-    rhel9.vm.box = "generic/rhel9"
-    rhel9.vm.hostname = "rhel9"
-    rhel9.vm.provision "ansible" do |ansible|
-      ansible.playbook = "playbook.yml"
-    end
-  end
+  # Define machines to create
+  machines = {
+    # "rhel7" => "generic/rhel7",
+    # "rhel8" => "generic/rhel8",
+    "rhel9-a" => "generic/rhel9",
+    "rhel9-b" => "generic/rhel9",
+  }
 
+  machines.each do |name, box|
+    config.vm.define name do |vm|
+      vm.vm.box = box
+      vm.vm.hostname = name
+      vm.vm.provision "ansible" do |ansible|
+        ansible.playbook = "playbook.yml"
+      end
+    end
+  end
 end
