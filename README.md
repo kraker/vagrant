@@ -45,4 +45,4 @@ vagrant up
 
 ## Author
 
-* Alex Kraker (github.com/kraker)
+* Alex Kraker (@kraker)
