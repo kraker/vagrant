@@ -58,4 +58,9 @@ Vagrant.configure("2") do |config|
     ubuntu2204.vm.hostname = "ubuntu2204"
     ubuntu2204.vm.network "private_network", ip: "10.0.0.41"
   end
+  config.vm.define "ubuntu2404" do |ubuntu2404|
+    ubuntu2404.vm.box = "bento/ubuntu-24.04"
+    ubuntu2404.vm.hostname = "ubuntu2404"
+    ubuntu2404.vm.network "private_network", ip: "10.0.0.42"
+  end
 end
