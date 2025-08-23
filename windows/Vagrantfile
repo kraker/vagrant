@@ -1,0 +1,11 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = 8192
+    vb.cpus = 4
+    vb.name = "Windows-Server-2022"
+  end
+  config.vm.box = "gusztavvargadr/windows-server-2022-standard"
+end
