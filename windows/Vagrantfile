@@ -5,7 +5,26 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 8192
     vb.cpus = 4
-    vb.name = "Windows-Server-2022"
   end
-  config.vm.box = "gusztavvargadr/windows-server-2022-standard"
+
+  config.vm.define "windows-server-2019" do |vm|
+    vm.vm.box = "gusztavvargadr/windows-server-2019-standard"
+    vm.vm.provider "virtualbox" do |vb|
+      vb.name = "Windows-Server-2019"
+    end
+  end
+
+  config.vm.define "windows-server-2022" do |vm|
+    vm.vm.box = "gusztavvargadr/windows-server-2022-standard"
+    vm.vm.provider "virtualbox" do |vb|
+      vb.name = "Windows-Server-2022"
+    end
+  end
+
+  config.vm.define "windows-11" do |vm|
+    vm.vm.box = "gusztavvargadr/windows-11"
+    vm.vm.provider "virtualbox" do |vb|
+      vb.name = "Windows-11"
+    end
+  end
 end

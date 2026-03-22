@@ -43,6 +43,23 @@ cd rhel
 vagrant up
 ```
 
+### Windows
+
+Create and start Windows boxes:
+
+```bash
+cd windows
+vagrant up
+```
+
+To start a specific box:
+
+```bash
+vagrant up windows-11
+vagrant up windows-server-2022
+vagrant up windows-server-2019
+```
+
 ## Author
 
 * Alex Kraker (@kraker)
